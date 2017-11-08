@@ -10,9 +10,14 @@ namespace quiz.ViewModel
 {
     public class QuizViewModel : INotifyPropertyChanged
     {
+        #region properties
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #region properties
+        public QuizViewModel()
+        {
+            Init();
+        }
+
         public Dictionary<int, Frage> DictFragen { get; private set; }
         public CommandButtonOne CommandButtonOne { get; set; }
         public CommandButtonTwo CommandButtonTwo { get; set; }
@@ -27,14 +32,24 @@ namespace quiz.ViewModel
 
         private void Init()
         {
+            QuizManager = new QuizManager();
 
+            DictFragen = QuizManager.ErstelleFragen();
+
+            // Erste aktive Frage ist eine zufällige Frage
+            Random random = new Random();
+            int randomFrage = random.Next(DictFragen.Count);
+
+            AktiveFrage = DictFragen[randomFrage];
         }
         protected virtual void OnPropertyChanged()
         {
 
         }
 
+
         #endregion
 
     }
+
 }

@@ -12,9 +12,10 @@ namespace quiz.Model
         public Dictionary<int, Frage> ErstelleFragen()
         {
             //auslagern in datei?
-            Frage tempFrage = new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu");
-            Dictionary<int, Frage> i = new Dictionary<int, Frage>();
-            i.Add(1, tempFrage);
+            Dictionary<int, Frage> i = new Dictionary<int, Frage>
+            {
+                { 0, new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu") }
+            };
             return i;
         }
 

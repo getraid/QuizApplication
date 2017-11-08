@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:quiz"
+        xmlns:local="clr-namespace:quiz.ViewModel"
         mc:Ignorable="d"
         Title="Geiles Minion Quiz" Height="500" Width="400">
+    <Window.DataContext>
+        <local:QuizViewModel></local:QuizViewModel>
+    </Window.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
