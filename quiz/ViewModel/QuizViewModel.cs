@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace quiz.ViewModel
 {
+    /// <summary>
+    /// This class handels all 
+    /// </summary>
     public class QuizViewModel : INotifyPropertyChanged
     {
         #region constructor
@@ -30,18 +33,9 @@ namespace quiz.ViewModel
         public CommandButtonFour CommandButtonFour { get; set; }
         public QuizManager QuizManager { get; set; }
 
-        private Frage aktiveFrage;
-
-        public Frage GetAktiveFrage()
-        {
-            return aktiveFrage;
-        }
-
-        public void SetAktiveFrage(Frage value)
-        {
-            aktiveFrage = value;
-            //OnPropertyChanged("FrageAenderung");
-        }
+        // Can't get the AktiveFrage { get; set; } to be opened/extended to write the OnPropertyChanged("somethingChanged") on set.
+        // GUI won't work with expanding it like: https://dw.getraid.com/file/pnbv.txt
+        public Frage AktiveFrage { get; set; }
 
         #endregion
 
@@ -57,29 +51,21 @@ namespace quiz.ViewModel
             CommandButtonFour = new CommandButtonFour(this);
             QuizManager = new QuizManager();
 
-            //link eventhandler
-           
-
-            
+            //Generates all questions and puts them in DictFragen Dictonary
             DictFragen = QuizManager.ErstelleFragen();
 
-            // Erste aktive Frage ist eine zufällige Frage
-            Random random = new Random();
-            int randomFrage = random.Next(DictFragen.Count);
-
-            SetAktiveFrage(DictFragen[randomFrage]);
+            // First question is random.
+            AktiveFrage = QuizManager.RandomFrage(this);
         }
 
         // Used for updating the GUI, once a new question is pulled
-    
-        protected virtual void OnPropertyChanged(string frageaenderung)
+        // Not working, because of unchangablity of AktiveFrage.
+        protected virtual void OnPropertyChanged(string fix)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(frageaenderung));
-            //aktionen zum ausführen hier einfügen
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(fix));
             MessageBox.Show("debug");
+           
         }
-        
- 
 
         #endregion
 

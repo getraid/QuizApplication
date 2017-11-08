@@ -28,10 +28,10 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40" />
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="210" Grid.Row="1" VerticalAlignment="Top" Width="264" Grid.ColumnSpan="3"/>
+        <Button Command="{Binding }" Content="{Binding AktiveFrage.Name1}" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button  Content="{Binding AktiveFrage.Name2}" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button  Content="{Binding AktiveFrage.Name3}" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Content="{Binding AktiveFrage.Name4}" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40" />
+        <Image Source="{Binding AktiveFrage.BildUri}" Grid.Column="1" HorizontalAlignment="Left" Height="210" Grid.Row="1" VerticalAlignment="Top" Width="264" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

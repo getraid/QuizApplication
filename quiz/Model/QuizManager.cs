@@ -7,30 +7,42 @@ using quiz.ViewModel;
 using quiz.Command;
 namespace quiz.Model
 {
+    /// <summary>
+    /// Handles basic tasks around the Dictonary and the Fragen/questions.
+    /// </summary>
     public class QuizManager
-    {
+
+    {   //Only for testing
+        //Maybe later the questions can be made in an external file.
         public Dictionary<int, Frage> ErstelleFragen()
         {
-            //auslagern in datei?
             Dictionary<int, Frage> i = new Dictionary<int, Frage>
             {
-                { 0, new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu") }
-            };
+                { 0, new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu") },
+                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", "Ein Igel") }
+              };
             return i;
         }
 
+        //Compares if the questionanswer equals the button-content.
         public bool BewerteAntwort(Frage aktuelleFrage, string antwort)
         {
-            return false;
+            return  aktuelleFrage.KorrekteAntwort == antwort ? true : false;
         }
+
         public void AktualisierungViewModelNachRichtig(QuizViewModel viewModel)
         {
 
+
         }
 
-        private Frage RandomFrage()
+        //Generate a random question of the Dictonary-pool
+        public Frage RandomFrage(QuizViewModel viewModel)
         {
-            return null;
+            Random random = new Random();
+            int randomFrage = random.Next(viewModel.DictFragen.Count);
+
+            return viewModel.DictFragen[randomFrage];
         }
     }
 }

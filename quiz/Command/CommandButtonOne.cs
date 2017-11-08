@@ -27,5 +27,7 @@ namespace quiz.Command
         {
             this.ViewModel = viewModel;
         }
+
+
     }
 }

@@ -22,6 +22,7 @@ namespace quiz
     {
         public MainWindow()
         {
+            DataContext = this;
             InitializeComponent();
         }
     }
