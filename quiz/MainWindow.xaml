@@ -5,22 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:quiz"
         mc:Ignorable="d"
-        Title="Geiles Minion Quiz" Height="350" Width="378.636">
+        Title="Geiles Minion Quiz" Height="500" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="50*"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="125"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="210"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40" />
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="210" Grid.Row="1" VerticalAlignment="Top" Width="264" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

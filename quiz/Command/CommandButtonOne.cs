@@ -9,7 +9,7 @@ namespace quiz.Command
 {
     public class CommandButtonOne : ICommand
     {
-        public QuizViewModel viewModel { get; set; }
+        public QuizViewModel ViewModel { get; set; }
 
         public event EventHandler CanExecuteChanged;
 
@@ -25,7 +25,7 @@ namespace quiz.Command
 
         public CommandButtonOne(QuizViewModel viewModel)
         {
-            this.viewModel = viewModel;
+            this.ViewModel = viewModel;
         }
     }
 }
