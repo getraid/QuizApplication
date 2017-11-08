@@ -18,17 +18,17 @@ namespace quiz.ViewModel
         }
         #region properties
         public Dictionary<int, Frage> DictFragen { get; private set; }
-        public CommandButtonOne commandButtonOne { get; set; }
-        public CommandButtonTwo commandButtonTwo { get; set; }
-        public CommandButtonFour commandButtonThree { get; set; }
+        public CommandButtonOne CommandButtonOne { get; set; }
+        public CommandButtonTwo CommandButtonTwo { get; set; }
+        public CommandButtonFour CommandButtonThree { get; set; }
         public QuizManager QuizManager { get; set; }
-        public Frage aktiveFrage { get; set; }
+        public Frage AktiveFrage { get; set; }
 
         #endregion
 
         #region methods
 
-        private void init() { }
+        private void Init() { }
         protected virtual void OnPropertyChanged() { }
 
         #endregion
