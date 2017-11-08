@@ -11,7 +11,11 @@ namespace quiz.Model
     {
         public Dictionary<int, Frage> ErstelleFragen()
         {
-            return null;
+            //auslagern in datei?
+            Frage tempFrage = new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu");
+            Dictionary<int, Frage> i = new Dictionary<int, Frage>();
+            i.Add(1, tempFrage);
+            return i;
         }
 
         public bool BewerteAntwort(Frage aktuelleFrage, string antwort)

@@ -12,15 +12,12 @@ namespace quiz.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public QuizViewModel()
-        {
-
-        }
         #region properties
         public Dictionary<int, Frage> DictFragen { get; private set; }
         public CommandButtonOne CommandButtonOne { get; set; }
         public CommandButtonTwo CommandButtonTwo { get; set; }
-        public CommandButtonFour CommandButtonThree { get; set; }
+        public CommandButtonThree CommandButtonThree { get; set; }
+        public CommandButtonFour CommandButtonFour { get; set; }
         public QuizManager QuizManager { get; set; }
         public Frage AktiveFrage { get; set; }
 
@@ -28,8 +25,14 @@ namespace quiz.ViewModel
 
         #region methods
 
-        private void Init() { }
-        protected virtual void OnPropertyChanged() { }
+        private void Init()
+        {
+
+        }
+        protected virtual void OnPropertyChanged()
+        {
+
+        }
 
         #endregion
 
