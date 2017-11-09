@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using quiz.ViewModel;
 using quiz.Command;
+using System.Windows;
+
 namespace quiz.Model
 {
     /// <summary>
@@ -27,17 +29,16 @@ namespace quiz.Model
         //Compares if the questionanswer equals the button-content.
         public bool BewerteAntwort(Frage aktuelleFrage, string antwort)
         {
-            return  aktuelleFrage.KorrekteAntwort == antwort ? true : false;
+            return aktuelleFrage.KorrekteAntwort == antwort ? true : false;
         }
 
         public void AktualisierungViewModelNachRichtig(QuizViewModel viewModel)
         {
-
-
+            viewModel.AktiveFrage = RandomFrage(viewModel);
         }
 
         //Generate a random question of the Dictonary-pool
-        public Frage RandomFrage(QuizViewModel viewModel)
+        private Frage RandomFrage(QuizViewModel viewModel)
         {
             Random random = new Random();
             int randomFrage = random.Next(viewModel.DictFragen.Count);
