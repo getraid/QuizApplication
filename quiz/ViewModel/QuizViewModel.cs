@@ -15,13 +15,7 @@ namespace quiz.ViewModel
     /// </summary>
     public class QuizViewModel : INotifyPropertyChanged
     {
-        #region constructor
 
-        public QuizViewModel()
-        {
-            Init();
-        }
-        #endregion
 
         #region properties
 
@@ -36,9 +30,16 @@ namespace quiz.ViewModel
         // Can't get the AktiveFrage { get; set; } to be opened/extended to write the OnPropertyChanged("somethingChanged") on set.
         // GUI won't work with expanding it like: https://dw.getraid.com/file/pnbv.txt
         public Frage AktiveFrage { get; set; }
-
         #endregion
+        
+        #region constructor
 
+        public QuizViewModel()
+        {
+            Init();
+        }
+        #endregion
+        
         #region methods
 
         private void Init()
@@ -60,11 +61,15 @@ namespace quiz.ViewModel
 
         // Used for updating the GUI, once a new question is pulled
         // Not working, because of unchangablity of AktiveFrage.
+
+    
+
+
         protected virtual void OnPropertyChanged(string fix)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(fix));
             MessageBox.Show("debug");
-           
+
         }
 
         #endregion

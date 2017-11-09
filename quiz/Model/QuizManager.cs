@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using quiz.ViewModel;
 using quiz.Command;
+using System.Windows;
+
 namespace quiz.Model
 {
     /// <summary>
@@ -32,7 +34,8 @@ namespace quiz.Model
 
         public void AktualisierungViewModelNachRichtig(QuizViewModel viewModel)
         {
-
+            RandomFrage(viewModel);
+            MessageBox.Show("Right");
 
         }
 
