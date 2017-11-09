@@ -29,13 +29,13 @@ namespace quiz.Model
         //Compares if the questionanswer equals the button-content.
         public bool BewerteAntwort(Frage aktuelleFrage, string antwort)
         {
-            return  aktuelleFrage.KorrekteAntwort == antwort ? true : false;
+            return aktuelleFrage.KorrekteAntwort == antwort ? true : false;
         }
 
         public void AktualisierungViewModelNachRichtig(QuizViewModel viewModel)
         {
-            RandomFrage(viewModel);
-            MessageBox.Show("Right");
+            viewModel.AktiveFrage = RandomFrage(viewModel);
+        
 
         }
 

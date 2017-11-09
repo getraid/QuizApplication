@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using quiz.Command;
 using quiz.Model;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
 
 namespace quiz.ViewModel
 {
@@ -15,7 +16,6 @@ namespace quiz.ViewModel
     /// </summary>
     public class QuizViewModel : INotifyPropertyChanged
     {
-
 
         #region properties
 
@@ -29,9 +29,24 @@ namespace quiz.ViewModel
 
         // Can't get the AktiveFrage { get; set; } to be opened/extended to write the OnPropertyChanged("somethingChanged") on set.
         // GUI won't work with expanding it like: https://dw.getraid.com/file/pnbv.txt
-        public Frage AktiveFrage { get; set; }
+       // public Frage AktiveFrage { get; set; }
+
+        private Frage aktiveFrage;
+        public Frage AktiveFrage
+        {
+            get { return aktiveFrage; }
+            set
+            {
+                if (aktiveFrage != value)
+                {
+                    aktiveFrage = value;
+                    OnPropertyChanged();
+                }
+               
+            }
+        }
         #endregion
-        
+
         #region constructor
 
         public QuizViewModel()
@@ -39,7 +54,7 @@ namespace quiz.ViewModel
             Init();
         }
         #endregion
-        
+
         #region methods
 
         private void Init()
@@ -62,13 +77,13 @@ namespace quiz.ViewModel
         // Used for updating the GUI, once a new question is pulled
         // Not working, because of unchangablity of AktiveFrage.
 
-    
 
 
-        protected virtual void OnPropertyChanged(string fix)
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(fix));
-            MessageBox.Show("debug");
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+ 
 
         }
 
