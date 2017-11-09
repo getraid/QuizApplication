@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace quiz.ViewModel
 {
     /// <summary>
-    /// A question. It has one picture, 4 answers and one correct answer
+    /// A question. This is the core-structure of a question.
+    /// It has one picture, 4 answers and one correct answer
     /// </summary>
     public class Frage
     {

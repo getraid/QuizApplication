@@ -35,12 +35,10 @@ namespace quiz.Model
         public void AktualisierungViewModelNachRichtig(QuizViewModel viewModel)
         {
             viewModel.AktiveFrage = RandomFrage(viewModel);
-        
-
         }
 
         //Generate a random question of the Dictonary-pool
-        public Frage RandomFrage(QuizViewModel viewModel)
+        private Frage RandomFrage(QuizViewModel viewModel)
         {
             Random random = new Random();
             int randomFrage = random.Next(viewModel.DictFragen.Count);

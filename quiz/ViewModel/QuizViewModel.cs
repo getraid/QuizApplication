@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 namespace quiz.ViewModel
 {
     /// <summary>
-    /// This class handels all 
+    /// This class ties all together
     /// </summary>
     public class QuizViewModel : INotifyPropertyChanged
     {
@@ -27,22 +27,15 @@ namespace quiz.ViewModel
         public CommandButtonFour CommandButtonFour { get; set; }
         public QuizManager QuizManager { get; set; }
 
-        // Can't get the AktiveFrage { get; set; } to be opened/extended to write the OnPropertyChanged("somethingChanged") on set.
-        // GUI won't work with expanding it like: https://dw.getraid.com/file/pnbv.txt
-       // public Frage AktiveFrage { get; set; }
-
         private Frage aktiveFrage;
         public Frage AktiveFrage
         {
             get { return aktiveFrage; }
             set
             {
-                if (aktiveFrage != value)
-                {
-                    aktiveFrage = value;
-                    OnPropertyChanged();
-                }
-               
+                aktiveFrage = value;
+                //This fires the propertyChangedEvent to update the GUI
+                OnPropertyChanged();
             }
         }
         #endregion
@@ -51,12 +44,16 @@ namespace quiz.ViewModel
 
         public QuizViewModel()
         {
+            //Initializes all new objects
             Init();
         }
         #endregion
 
         #region methods
 
+        /// <summary>
+        /// Allocate all new objects, Create a random question through the QuizManager and sets it as active question(AktiveFrage)
+        /// </summary>
         private void Init()
         {
             //init new objs
@@ -71,20 +68,13 @@ namespace quiz.ViewModel
             DictFragen = QuizManager.ErstelleFragen();
 
             // First question is random.
-            AktiveFrage = QuizManager.RandomFrage(this);
+            QuizManager.AktualisierungViewModelNachRichtig(this);
         }
 
-        // Used for updating the GUI, once a new question is pulled
-        // Not working, because of unchangablity of AktiveFrage.
-
-
-
-
+        // Used for updating the GUI, once a new question is pulled in AktiveFrage
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
- 
-
         }
 
         #endregion
