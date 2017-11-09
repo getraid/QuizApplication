@@ -13,8 +13,26 @@ namespace quiz.Model
     /// Handles basic tasks around the Dictonary and the Fragen/questions.
     /// </summary>
     public class QuizManager
+    {
+        #region properties
 
-    {   //Only for testing
+        private Random Random { get; set; }
+        private int TempFragenCount { get; set; }
+        #endregion
+        #region constructor
+
+        public QuizManager()
+        {
+            Random = new Random();
+            TempFragenCount = 0;
+        }
+        #endregion
+
+
+        #region methods
+        #endregion
+
+        //Only for testing
         //Maybe later the questions can be made in an external file.
         public Dictionary<int, Frage> ErstelleFragen()
         {
@@ -25,6 +43,7 @@ namespace quiz.Model
               };
             return i;
         }
+
 
         //Compares if the questionanswer equals the button-content.
         public bool BewerteAntwort(Frage aktuelleFrage, string antwort)
@@ -40,10 +59,33 @@ namespace quiz.Model
         //Generate a random question of the Dictonary-pool
         private Frage RandomFrage(QuizViewModel viewModel)
         {
-            Random random = new Random();
-            int randomFrage = random.Next(viewModel.DictFragen.Count);
+
+            int randomFrage = Random.Next(viewModel.DictFragen.Count);
+
+            // Saving last Frage doesn't seem to work. Needs fix.
+
+            //if (viewModel.LetzterFragenSchlüssel == randomFrage)
+            //{
+            //    RandomFrage(viewModel);
+            //}
+            //else
+            //{
+            //    viewModel.LetzterFragenSchlüssel = randomFrage;
+            //}
 
             return viewModel.DictFragen[randomFrage];
+        }
+
+        [Obsolete]
+        private Frage LoopFrage(QuizViewModel viewModel)
+        {
+            TempFragenCount++;
+            if (TempFragenCount == viewModel.DictFragen.Count)
+            {
+                TempFragenCount = 0;
+            }
+            return viewModel.DictFragen[TempFragenCount];
+
         }
     }
 }
