@@ -22,6 +22,7 @@ namespace quiz.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public Dictionary<int, Frage> DictFragen { get; private set; }
         public CommandButton CommandButton { get; set; }
+        public CommandNewQuestionWindow CommandNewQuestionWindow{get;set;}
         public QuizManager QuizManager { get; set; }
 
         private Frage aktiveFrage;
@@ -54,8 +55,9 @@ namespace quiz.ViewModel
         private void Init()
         {
             //init new objs
-
             CommandButton = new CommandButton(this);
+            CommandNewQuestionWindow = new CommandNewQuestionWindow(this);
+
             QuizManager = new QuizManager();
 
             //Generates all questions and puts them in DictFragen Dictonary

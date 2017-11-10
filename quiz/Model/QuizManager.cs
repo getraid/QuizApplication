@@ -34,6 +34,7 @@ namespace quiz.Model
 
         //Only for testing
         //Maybe later the questions can be made in an external file.
+        [Obsolete]
         public Dictionary<int, Frage> ErstelleFragen()
         {
             Dictionary<int, Frage> i = new Dictionary<int, Frage>
@@ -42,6 +43,17 @@ namespace quiz.Model
                 { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg","Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) }
               };
             return i;
+        }
+        
+        //Frage will be created in a list instead of a Dictonary. 
+        public List<Frage> CreateFragen()
+        {
+            List<Frage> temp = new List<Frage>()
+            {
+               { new Frage("https://goo.gl/EyKHvw","Wie heißt diese Kadse", "Peter", "Uwe", "Gertrud", "Der Diktator", 4) },
+               { new Frage("https://dw.getraid.com/file/wtvr.jpg", "Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) }
+            };
+            return temp;
         }
 
 
