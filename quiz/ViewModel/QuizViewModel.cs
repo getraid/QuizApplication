@@ -21,7 +21,7 @@ namespace quiz.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
         public List<Frage> FragenList { get; private set; }
-        public CommandButton CommandButton { get; set; }
+        public CommandAnswer CommandButton { get; set; }
         public CommandNewQuestionWindow CommandNewQuestionWindow{get;set;}
         public QuizManager QuizManager { get; set; }
 
@@ -55,7 +55,7 @@ namespace quiz.ViewModel
         private void Init()
         {
             //init new objs
-            CommandButton = new CommandButton(this);
+            CommandButton = new CommandAnswer(this);
             CommandNewQuestionWindow = new CommandNewQuestionWindow(this);
 
             QuizManager = new QuizManager();

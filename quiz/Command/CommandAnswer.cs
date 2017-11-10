@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace quiz.Command
 {
-    public class CommandButton : ICommand
+    public class CommandAnswer : ICommand
     {
         #region properties
 
@@ -18,7 +18,7 @@ namespace quiz.Command
         #endregion
         #region constructor
 
-        public CommandButton(QuizViewModel viewModel)
+        public CommandAnswer(QuizViewModel viewModel)
         {
             this.ViewModel = viewModel;
         }
@@ -35,9 +35,6 @@ namespace quiz.Command
         public void Execute(object parameter)
         {
             string param = (string)parameter;
-
-            Debug.Print(param);
-
 
             if (ViewModel.QuizManager.BewerteAntwort(ViewModel.AktiveFrage, int.Parse(parameter.ToString())))
             {
