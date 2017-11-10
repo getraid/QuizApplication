@@ -63,6 +63,7 @@
       <DependentUpon>QuestionCreator.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Frage.cs" />
+    <Compile Include="ViewModel\QuestionCreatorViewModel.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

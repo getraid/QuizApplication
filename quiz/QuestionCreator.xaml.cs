@@ -21,6 +21,7 @@ namespace quiz
     {
         public QuestionCreator()
         {
+
             InitializeComponent();
         }
     }

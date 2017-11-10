@@ -25,7 +25,14 @@ namespace quiz.Command
 
         public void Execute(object parameter)
         {
-            QuestionCreator qc = new QuestionCreator();
+            // Need to share viewmodel or at least question list<Frage> between two forms. 
+            QuestionCreator qc = new QuestionCreator
+            {
+                DataContext = this.viewModel
+            };
+
+
+
             qc.Show();
         }
     }
