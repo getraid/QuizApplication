@@ -40,18 +40,20 @@ namespace quiz.Model
             Dictionary<int, Frage> i = new Dictionary<int, Frage>
             {
                 { 0, new Frage("https://goo.gl/EyKHvw","Wie heißt diese Kadse", "Peter", "Uwe", "Gertrud", "Der Diktator", 4) },
-                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg","Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) }
+                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg","Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) },
+                { 2 ,new Frage("https://dw.getraid.com/file/it7q.png", "Was ist das für eine fette Datei?", "ein C#","ein Java","ein Gava","ein Lava",1) }
               };
             return i;
         }
-        
+
         //Frage will be created in a list instead of a Dictonary. 
         public List<Frage> CreateFragen()
         {
             List<Frage> temp = new List<Frage>()
             {
                { new Frage("https://goo.gl/EyKHvw","Wie heißt diese Kadse", "Peter", "Uwe", "Gertrud", "Der Diktator", 4) },
-               { new Frage("https://dw.getraid.com/file/wtvr.jpg", "Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) }
+               { new Frage("https://dw.getraid.com/file/wtvr.jpg", "Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) },
+               {new Frage("https://dw.getraid.com/file/it7q.png", "Was ist das für eine fette Datei?", "ein C#","ein Java","ein Gava","ein Lava",1) }
             };
             return temp;
         }
@@ -72,31 +74,31 @@ namespace quiz.Model
         private Frage RandomFrage(QuizViewModel viewModel)
         {
 
-            int randomFrage = Random.Next(viewModel.DictFragen.Count);
+            int randomFrage = Random.Next(viewModel.FragenList.Count);
 
-            // Saving last Frage doesn't seem to work. Needs fix.
+            if (TempFragenCount == randomFrage)
+            {
+                randomFrage++;
+                if (randomFrage >= viewModel.FragenList.Count)
+                {
+                    randomFrage = 0;
+                }
+            }
+            TempFragenCount = randomFrage;
 
-            //if (viewModel.LetzterFragenSchlüssel == randomFrage)
-            //{
-            //    RandomFrage(viewModel);
-            //}
-            //else
-            //{
-            //    viewModel.LetzterFragenSchlüssel = randomFrage;
-            //}
 
-            return viewModel.DictFragen[randomFrage];
+            return viewModel.FragenList[randomFrage];
         }
 
         [Obsolete]
         private Frage LoopFrage(QuizViewModel viewModel)
         {
             TempFragenCount++;
-            if (TempFragenCount == viewModel.DictFragen.Count)
+            if (TempFragenCount == viewModel.FragenList.Count)
             {
                 TempFragenCount = 0;
             }
-            return viewModel.DictFragen[TempFragenCount];
+            return viewModel.FragenList[TempFragenCount];
 
         }
     }
