@@ -12,11 +12,11 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="114"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="113"/>
+            <ColumnDefinition Width="64*"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -28,10 +28,10 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <Button Command="{Binding CommandButton}" CommandParameter="1" Content="{Binding AktiveFrage.Name1}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40" FontSize="10"/>
-        <Button Command="{Binding CommandButton}" CommandParameter="2" Content="{Binding AktiveFrage.Name2}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40" FontSize="10"/>
-        <Button Command="{Binding CommandButton}" CommandParameter="3" Content="{Binding AktiveFrage.Name3}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40" FontSize="10"/>
-        <Button Command="{Binding CommandButton}" CommandParameter="4" Content="{Binding AktiveFrage.Name4}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40" FontSize="10"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="1" Content="{Binding AktiveFrage.Name1}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="114" Height="40" FontSize="10"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="2" Content="{Binding AktiveFrage.Name2}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="113" Height="40" FontSize="10"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="3" Content="{Binding AktiveFrage.Name3}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="114" Height="40" FontSize="10"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="4" Content="{Binding AktiveFrage.Name4}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="113" Height="40" FontSize="10"/>
         <Image Source="{Binding AktiveFrage.BildUri}" Stretch="Uniform" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MinWidth="128" MinHeight="128"/>
         <Label Content="{Binding AktiveFrage.FrageStellung}" Grid.Column="1" VerticalAlignment="Bottom" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="26" FontSize="14" FontFamily="Segoe UI Black" FontWeight="Bold"/>
         <!--  <Menu Grid.ColumnSpan="5" VerticalAlignment="Top" >
