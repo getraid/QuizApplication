@@ -39,9 +39,10 @@ namespace quiz.Model
         {
             Dictionary<int, Frage> i = new Dictionary<int, Frage>
             {
-                { 0, new Frage("https://goo.gl/EyKHvw","Wie heißt diese Kadse", "Peter", "Uwe", "Gertrud", "Der Diktator", 4) },
-                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg","Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) },
-                { 2 ,new Frage("https://dw.getraid.com/file/it7q.png", "Was ist das für eine fette Datei?", "ein C#","ein Java","ein Gava","ein Lava",1) }
+                 {0, new Frage("https://i.imgur.com/ReZsV6N.jpg","Was für ein Tier ist das?", "Frosch", "Antilope", "Zierlicher Widderbock", "Ameise", 4) },
+                 {1, new Frage("https://i.imgur.com/FIpZXb0.jpg","Was ist das?!", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) },
+                 {2, new Frage("https://i.imgur.com/9slf062.jpg","Welcher Graskäfer mag das sein?", "Zierlicher Widderbock", "Grashüpfer", "Eine Gottesanbeterin ", "Eine Laugenantilope", 1) },
+                 {3, new Frage("https://i.imgur.com/uITJ7gQ.jpg","Zu welchem Baum gehört das Blatt?", "Eiche", "Birke", "Buche", "Japanischer Kuchenbaum", 3) }
               };
             return i;
         }
@@ -51,9 +52,10 @@ namespace quiz.Model
         {
             List<Frage> temp = new List<Frage>()
             {
-               { new Frage("https://goo.gl/EyKHvw","Wie heißt diese Kadse", "Peter", "Uwe", "Gertrud", "Der Diktator", 4) },
-               { new Frage("https://dw.getraid.com/file/wtvr.jpg", "Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) },
-               {new Frage("https://dw.getraid.com/file/it7q.png", "Was ist das für eine fette Datei?", "ein C#","ein Java","ein Gava","ein Lava",1) }
+                { new Frage("https://i.imgur.com/ReZsV6N.jpg","Was für ein Tier ist das?", "Frosch", "Antilope", "Zierlicher Widderbock", "Ameise", 4) },
+                { new Frage("https://i.imgur.com/FIpZXb0.jpg","Was ist das?!", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) },
+                { new Frage("https://i.imgur.com/9slf062.jpg","Welcher Graskäfer mag das sein?", "Zierlicher Widderbock", "Grashüpfer", "Eine Gottesanbeterin ", "Eine Laugenantilope", 1) },
+                {new Frage("https://i.imgur.com/uITJ7gQ.jpg","Zu welchem Baum gehört das Blatt?", "Eiche", "Birke", "Buche", "Japanischer Kuchenbaum", 3) }
             };
             return temp;
         }
