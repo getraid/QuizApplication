@@ -56,7 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\CommandButton.cs" />
+    <Compile Include="Command\CommandAnswer.cs" />
     <Compile Include="Command\CommandNewQuestionWindow.cs" />
     <Compile Include="Model\QuizManager.cs" />
     <Compile Include="QuestionCreator.xaml.cs">
