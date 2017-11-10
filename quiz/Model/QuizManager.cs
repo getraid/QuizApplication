@@ -20,8 +20,10 @@ namespace quiz.Model
         {
             Dictionary<int, Frage> i = new Dictionary<int, Frage>
             {
-                { 0, new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu") },
-                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", "Ein Igel") }
+                { 0, new Frage("https://i.imgur.com/ReZsV6N.jpg", "Frosch", "Antilope", "Zierlicher Widderbock", "Ameise", "Ameise") },
+                { 1, new Frage("https://i.imgur.com/FIpZXb0.jpg", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", "Ein Igel") },
+                 { 2, new Frage("https://i.imgur.com/9slf062.jpg", "Zierlicher Widderbock", "Grashüpfer", "Eine Gottesanbeterin ", "Eine Laugenantilope", "Zierlicher Widderbock") },
+                 { 3, new Frage("https://i.imgur.com/uITJ7gQ.jpg", "Eiche", "Birke", "Buche", "Japanischer Kuchenbaum", "Buche") }
               };
             return i;
         }
