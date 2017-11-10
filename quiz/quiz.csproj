@@ -56,11 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\CommandButtonFour.cs" />
-    <Compile Include="Command\CommandButtonOne.cs" />
-    <Compile Include="Command\CommandButtonThree.cs" />
-    <Compile Include="Command\CommandButtonTwo.cs" />
+    <Compile Include="Command\CommandButton.cs" />
+    <Compile Include="Command\CommandNewQuestionWindow.cs" />
     <Compile Include="Model\QuizManager.cs" />
+    <Compile Include="QuestionCreator.xaml.cs">
+      <DependentUpon>QuestionCreator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\Frage.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -75,6 +76,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="QuestionCreator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

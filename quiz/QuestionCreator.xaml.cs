@@ -10,19 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace quiz
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
+    /// Interaction logic for QuestionCreator.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class QuestionCreator : Window
     {
-        public MainWindow()
+        public QuestionCreator()
         {
-            DataContext = this;
             InitializeComponent();
         }
     }

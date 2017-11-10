@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace quiz.Command
 {
-    public class CommandButtonFour : ICommand
+    public class CommandButton : ICommand
     {
         #region properties
 
@@ -18,7 +18,7 @@ namespace quiz.Command
         #endregion
         #region constructor
 
-        public CommandButtonFour(QuizViewModel viewModel)
+        public CommandButton(QuizViewModel viewModel)
         {
             this.ViewModel = viewModel;
         }
@@ -34,9 +34,12 @@ namespace quiz.Command
 
         public void Execute(object parameter)
         {
-            Debug.Print(parameter.ToString());
+            string param = (string)parameter;
 
-            if (ViewModel.QuizManager.BewerteAntwort(ViewModel.AktiveFrage, (string)parameter))
+            Debug.Print(param);
+
+
+            if (ViewModel.QuizManager.BewerteAntwort(ViewModel.AktiveFrage, int.Parse(parameter.ToString())))
             {
                 ViewModel.QuizManager.AktualisierungViewModelNachRichtig(ViewModel);
             }
@@ -46,5 +49,7 @@ namespace quiz.Command
             }
         }
         #endregion
+
+
     }
 }

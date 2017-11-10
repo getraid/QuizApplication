@@ -13,15 +13,17 @@ namespace quiz.ViewModel
     public class Frage
     {
         public string BildUri { get; set; }
+        public string FrageStellung { get; set; } 
         public string Name1 { get; set; }
         public string Name2 { get; set; }
         public string Name3 { get; set; }
         public string Name4 { get; set; }
-        public string KorrekteAntwort { get; set; }
+        public int KorrekteAntwort { get; set; }
         
-        public Frage(string BildUri, string Name1, string Name2, string Name3, string Name4, string KorrekteAntwort)
+        public Frage(string BildUri, string FrageStellung, string Name1, string Name2, string Name3, string Name4, int KorrekteAntwort)
         {
             this.BildUri = BildUri;
+            this.FrageStellung = FrageStellung;
             this.Name1 = Name1;
             this.Name2 = Name2;
             this.Name3 = Name3;
