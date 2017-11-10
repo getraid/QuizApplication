@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:quiz.ViewModel"
         mc:Ignorable="d"
-        Title="Geiles Minion Quiz" Height="500" Width="400">
+        Title="Quiz" Height="500" Width="400" MinWidth="300" MinHeight="400">
     <Window.DataContext>
         <local:QuizViewModel></local:QuizViewModel>
     </Window.DataContext>
@@ -20,18 +20,26 @@
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="210"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="16*"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="17*"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
-        <Button Command="{Binding CommandButtonOne}" CommandParameter="{Binding AktiveFrage.Name1}" Content="{Binding AktiveFrage.Name1}" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button Command="{Binding CommandButtonTwo}" CommandParameter="{Binding AktiveFrage.Name2}" Content="{Binding AktiveFrage.Name2}" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button Command="{Binding CommandButtonThree}" CommandParameter="{Binding AktiveFrage.Name3}" Content="{Binding AktiveFrage.Name3}" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button Command="{Binding CommandButtonFour}" CommandParameter="{Binding AktiveFrage.Name4}" Content="{Binding AktiveFrage.Name4}" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Image Source="{Binding AktiveFrage.BildUri}" Grid.Column="1" HorizontalAlignment="Left" Height="210" Grid.Row="1" VerticalAlignment="Top" Width="264" Grid.ColumnSpan="3" Stretch="UniformToFill"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="1" Content="{Binding AktiveFrage.Name1}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="2" Content="{Binding AktiveFrage.Name2}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="3" Content="{Binding AktiveFrage.Name3}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button Command="{Binding CommandButton}" CommandParameter="4" Content="{Binding AktiveFrage.Name4}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Image Source="{Binding AktiveFrage.BildUri}" Stretch="Uniform" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MinWidth="128" MinHeight="128"/>
+        <Label Content="{Binding AktiveFrage.FrageStellung}" Grid.Column="1" VerticalAlignment="Bottom" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="26" FontSize="14" FontFamily="Segoe UI Black" FontWeight="Bold"/>
+        <Menu Grid.ColumnSpan="5" VerticalAlignment="Top" >
+            <MenuItem Header="_Datei" >
+                <MenuItem Header="_Öffne Fragen Manager" />
+                <Separator />
+                <MenuItem Header="_Beenden"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

@@ -38,15 +38,15 @@ namespace quiz.Model
         {
             Dictionary<int, Frage> i = new Dictionary<int, Frage>
             {
-                { 0, new Frage("https://goo.gl/EyKHvw", "Peter", "Uwe", "Gertrud", "Owusu", "Owusu") },
-                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", "Ein Igel") }
+                { 0, new Frage("https://goo.gl/EyKHvw","Wie heißt diese Kadse", "Peter", "Uwe", "Gertrud", "Der Diktator", 4) },
+                { 1, new Frage("https://dw.getraid.com/file/wtvr.jpg","Was ist das für ein Tier", "Ein Igel", "Ein Schmiegel", "Ein Kübel", "Ein Rüpel", 1) }
               };
             return i;
         }
 
 
         //Compares if the questionanswer equals the button-content.
-        public bool BewerteAntwort(Frage aktuelleFrage, string antwort)
+        public bool BewerteAntwort(Frage aktuelleFrage, int antwort)
         {
             return aktuelleFrage.KorrekteAntwort == antwort ? true : false;
         }
