@@ -45,6 +45,7 @@ namespace quiz.ViewModel
             //Initializes all new objects
             Init();
         }
+
         #endregion
 
         #region methods

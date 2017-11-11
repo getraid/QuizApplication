@@ -1,4 +1,6 @@
-﻿using System;
+﻿using quiz.Command;
+using quiz.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,26 +18,36 @@ namespace quiz.ViewModel
     {
         #region properties
         public event PropertyChangedEventHandler PropertyChanged;
+        private QuizViewModel QVW { get; set; }
+        private List<Frage> FragenList { get; set; }
+        private QuizManager QuizManager { get; set; }
 
         #endregion
         #region constructor
 
-        //singleton pattern doesn't work && shouldn't be used at mvvm
+       
 
         public QuestionCreatorViewModel()
         {
-
+            //all the other classes register
+            CommandNewQuestionWindow.NotifyVMReady += new CommandNewQuestionWindow.TransferViewModel(Init);
         }
 
 
         #endregion
         #region methods
 
-        private void Init()
+        private void Init(QuizViewModel sender)
         {
+            if (QVW == null)
+            {
+                QVW = sender;
+            }
+            QuizManager = QVW.QuizManager;
+            FragenList = QVW.FragenList;
 
+            QuizManager.AddFragen(QVW.FragenList, "", "Wie Mongo", "", "", "", "", 1);
         }
-
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
