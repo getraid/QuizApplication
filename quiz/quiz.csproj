@@ -56,13 +56,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\CommandAnswer.cs" />
-    <Compile Include="Command\CommandNewQuestionWindow.cs" />
+    <Compile Include="ViewModel\Command\CommandAnswer.cs" />
+    <Compile Include="ViewModel\Command\CommandCreateNewQuestion.cs" />
+    <Compile Include="ViewModel\Command\CommandDeleteQuestion.cs" />
+    <Compile Include="ViewModel\Command\CommandLastQuestion.cs" />
+    <Compile Include="ViewModel\Command\CommandNewQuestionWindow.cs" />
+    <Compile Include="ViewModel\Command\CommandNextQuestion.cs" />
     <Compile Include="Model\QuizManager.cs" />
     <Compile Include="QuestionCreator.xaml.cs">
       <DependentUpon>QuestionCreator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Frage.cs" />
+    <Compile Include="Model\Frage.cs" />
     <Compile Include="ViewModel\QuestionCreatorViewModel.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />
     <Page Include="MainWindow.xaml">

@@ -21,8 +21,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="155*"/>
             <RowDefinition Height="24"/>
-            <RowDefinition Height="64*"/>
-            <RowDefinition Height="75*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
             <RowDefinition Height="37*"/>
         </Grid.RowDefinitions>
 
@@ -30,27 +30,27 @@
         <Button Content="Vor" VerticalAlignment="Top" Width="63" Height="20" Grid.Column="3" Margin="94,10,0,0" HorizontalAlignment="Right"/>
 
         <Button Content="Hinzufügen" Grid.Column="3" HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Top" Width="157" Height="20"/>
-        <Button Content="Frage löschen" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="157" Height="20" Margin="0,0,10,0" HorizontalContentAlignment="Center"/>
+        <Button Content="Frage löschen" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="157" Height="20"/>
+
 
         <StackPanel Grid.Column="1" Grid.Row="2">
-            <Label Content="Antwort 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="157"/>
-
-            <TextBox  TextWrapping="Wrap" Height="23" VerticalAlignment="Top" HorizontalContentAlignment="Stretch"/>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="157" Content="Antwort 1"/>
+            <TextBox Text="{Binding test,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Stretch"/>
 
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="2">
             <Label Content="Antwort 2&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="157"/>
-            <TextBox  TextWrapping="Wrap" Height="23" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" />
+            <TextBox  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" />
 
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="3" Margin="0,0,0,21">
             <Label Content="Antwort 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="157"/>
-            <TextBox  TextWrapping="Wrap" Height="23" VerticalAlignment="Top" HorizontalContentAlignment="Stretch"/>
+            <TextBox  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Stretch"/>
 
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="3" Margin="0,0,0,21">
             <Label Content="Antwort 4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="157"/>
-            <TextBox  TextWrapping="Wrap" Height="23" VerticalAlignment="Top" HorizontalContentAlignment="Stretch"/>
+            <TextBox  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Stretch"/>
 
         </StackPanel>
         <StackPanel Grid.Column="1" Height="59" Margin="0,41,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3">
@@ -58,10 +58,13 @@
             <TextBox Grid.ColumnSpan="3" Grid.Column="1"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" Margin="0,0,21,0" />
 
         </StackPanel>
-        <StackPanel Height="55" Margin="1,100,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1">
+        <StackPanel Height="55" Margin="0,100,1,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1">
             <Label Content="Hier eine Bild-URL eingeben" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"  Grid.ColumnSpan="3"/>
             <TextBox Grid.ColumnSpan="3" Grid.Column="1"  TextWrapping="Wrap" Text="https://www.example.com/image.jpg" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" Margin="0,0,19,0" />
-
         </StackPanel>
+        <RadioButton CommandParameter="1" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,8,10,0" />
+        <RadioButton CommandParameter="2" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,8,10,0" />
+        <RadioButton CommandParameter="3" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,13,10,0" />
+        <RadioButton CommandParameter="4" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,13,10,0" />
     </Grid>
 </Window>

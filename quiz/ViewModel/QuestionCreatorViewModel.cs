@@ -18,19 +18,23 @@ namespace quiz.ViewModel
     {
         #region properties
         public event PropertyChangedEventHandler PropertyChanged;
-        private QuizViewModel QVW { get; set; }
-        private List<Frage> FragenList { get; set; }
-        private QuizManager QuizManager { get; set; }
+        public QuizViewModel QuizViewModel { get; set; }
+        public List<Frage> FragenList { get; set; }
+        public QuizManager QuizManager { get; set; }
+
+        public CommandLastQuestion GetCommandLastQuestion { get; set; }
+        public CommandNextQuestion GetCommandNextQuestion { get; set; }
+        public CommandDeleteQuestion GetCommandDeleteQuestion { get; set; }
+        public CommandCreateNewQuestion GetCommandCreateNewQuestion { get; set; }
 
         #endregion
         #region constructor
-
-       
 
         public QuestionCreatorViewModel()
         {
             //all the other classes register
             CommandNewQuestionWindow.NotifyVMReady += new CommandNewQuestionWindow.TransferViewModel(Init);
+
         }
 
 
@@ -39,14 +43,13 @@ namespace quiz.ViewModel
 
         private void Init(QuizViewModel sender)
         {
-            if (QVW == null)
+            if (QuizViewModel == null)
             {
-                QVW = sender;
+                QuizViewModel = sender;
             }
-            QuizManager = QVW.QuizManager;
-            FragenList = QVW.FragenList;
+            QuizManager = QuizViewModel.QuizManager;
+            FragenList = QuizViewModel.FragenList;
 
-            QuizManager.AddFragen(QVW.FragenList, "", "Wie Mongo", "", "", "", "", 1);
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
