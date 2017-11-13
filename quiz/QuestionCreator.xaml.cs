@@ -21,7 +21,7 @@ namespace quiz
     {
         public QuestionCreator()
         {
-
+            DataContext = this;
             InitializeComponent();
         }
     }

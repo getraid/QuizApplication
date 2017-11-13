@@ -56,7 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AnswerToggle.cs" />
+    <Compile Include="Model\HandleToggle.cs" />
     <Compile Include="ViewModel\Command\CommandAnswer.cs" />
+    <Compile Include="ViewModel\Command\CommandChangeType.cs" />
     <Compile Include="ViewModel\Command\CommandCreateNewQuestion.cs" />
     <Compile Include="ViewModel\Command\CommandDeleteQuestion.cs" />
     <Compile Include="ViewModel\Command\CommandLastQuestion.cs" />

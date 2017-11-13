@@ -39,10 +39,7 @@ namespace quiz.Command
         public void Execute(object parameter)
         {
             // Need to share viewmodel or at least question list<Frage> between two forms. 
-            QuestionCreator qc = new QuestionCreator
-            {
-                DataContext = this.viewModel
-            };
+            QuestionCreator qc = new QuestionCreator();
 
             RaiseEvent();
 
