@@ -30,7 +30,6 @@ namespace quiz.ViewModel
         public CommandCreateNewQuestion CommandCreateNewQuestion { get; set; }
         public CommandChangeType CommandChangeType { get; set; }
 
-
         private Frage tempFrage;
         public Frage TempFrage { get => tempFrage; set { tempFrage = value; OnPropertyChanged(); } }
 
