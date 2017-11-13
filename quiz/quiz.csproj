@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,12 +58,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AnswerToggle.cs" />
+    <Compile Include="Model\FileManager.cs" />
     <Compile Include="Model\HandleToggle.cs" />
     <Compile Include="ViewModel\Command\CommandAnswer.cs" />
     <Compile Include="ViewModel\Command\CommandChangeType.cs" />
     <Compile Include="ViewModel\Command\CommandCreateNewQuestion.cs" />
     <Compile Include="ViewModel\Command\CommandDeleteQuestion.cs" />
     <Compile Include="ViewModel\Command\CommandLastQuestion.cs" />
+    <Compile Include="ViewModel\Command\CommandLoadQuestions.cs" />
     <Compile Include="ViewModel\Command\CommandNewQuestionWindow.cs" />
     <Compile Include="ViewModel\Command\CommandNextQuestion.cs" />
     <Compile Include="Model\QuizManager.cs" />
@@ -70,6 +73,7 @@
       <DependentUpon>QuestionCreator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Frage.cs" />
+    <Compile Include="ViewModel\Command\CommandSaveQuestions.cs" />
     <Compile Include="ViewModel\QuestionCreatorViewModel.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />
     <Page Include="MainWindow.xaml">

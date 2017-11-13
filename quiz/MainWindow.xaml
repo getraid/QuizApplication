@@ -38,6 +38,9 @@
             <MenuItem Header="_Datei" >
                 <MenuItem Header="_Öffne Fragen-Manager" Command="{Binding CommandNewQuestionWindow}"/>
                 <Separator />
+                <MenuItem Header="_Exportiere Fragen" Command="{Binding CommandSaveQuestions}"/>
+                <MenuItem Header="_Importiere Fragen" Command="{Binding CommandLoadQuestions}"/>
+                <Separator />
                 <MenuItem Header="_Beenden"/>
             </MenuItem>
         </Menu>

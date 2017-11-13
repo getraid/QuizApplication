@@ -23,8 +23,10 @@ namespace quiz.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public List<Frage> FragenList { get; private set; }
         public CommandAnswer CommandButton { get; set; }
-        public CommandNewQuestionWindow CommandNewQuestionWindow{get;set;}
+        public CommandNewQuestionWindow CommandNewQuestionWindow { get; set; }
         public QuizManager QuizManager { get; set; }
+        public CommandLoadQuestions CommandLoadQuestions { get; set; }
+        public CommandSaveQuestions CommandSaveQuestions { get; set; }
 
         private Frage aktiveFrage;
         public Frage AktiveFrage
@@ -59,6 +61,8 @@ namespace quiz.ViewModel
             //init new objs
             CommandButton = new CommandAnswer(this);
             CommandNewQuestionWindow = new CommandNewQuestionWindow(this);
+            CommandLoadQuestions = new CommandLoadQuestions(this);
+            CommandSaveQuestions = new CommandSaveQuestions(this);     
 
             QuizManager = new QuizManager();
 
