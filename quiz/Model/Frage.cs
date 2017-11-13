@@ -10,6 +10,7 @@ namespace quiz.ViewModel
     /// A question. This is the core-structure of a question.
     /// It has one picture, 4 answers and one correct answer
     /// </summary>
+    [Serializable]
     public class Frage
     {
         public string BildUri { get; set; }
@@ -19,7 +20,9 @@ namespace quiz.ViewModel
         public string Name3 { get; set; }
         public string Name4 { get; set; }
         public int KorrekteAntwort { get; set; }
-        
+
+        public Frage() { }
+
         public Frage(string BildUri, string FrageStellung, string Name1, string Name2, string Name3, string Name4, int KorrekteAntwort)
         {
             this.BildUri = BildUri;
@@ -29,6 +32,11 @@ namespace quiz.ViewModel
             this.Name3 = Name3;
             this.Name4 = Name4;
             this.KorrekteAntwort = KorrekteAntwort;
+        }
+
+        public void AddKorrekteAntwort(int korrekteAnt)
+        {
+            KorrekteAntwort = korrekteAnt;
         }
     }
 }

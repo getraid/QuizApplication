@@ -8,25 +8,24 @@ using System.Windows.Input;
 
 namespace quiz.Command
 {
-    public class CommandNewQuestionWindow : ICommand
+    public class CommandDeleteQuestion: ICommand
     {
-        public QuizViewModel viewModel;
+        private QuestionCreatorViewModel ViewModel { get; set; }
         public event EventHandler CanExecuteChanged { add { } remove { } }
-        public CommandNewQuestionWindow(QuizViewModel viewModel)
-        {
-            this.viewModel = viewModel;
-        }
 
+        public CommandDeleteQuestion(QuestionCreatorViewModel vm)
+        {
+            ViewModel = vm;
+        }
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return false;
         }
 
         public void Execute(object parameter)
         {
-            QuestionCreator qc = new QuestionCreator();
-            qc.Show();
+            throw new NotImplementedException();
         }
     }
 }

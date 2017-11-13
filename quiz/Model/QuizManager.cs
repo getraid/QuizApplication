@@ -60,6 +60,11 @@ namespace quiz.Model
             return temp;
         }
 
+        public void AddFragen(List<Frage> currentList, string url, string frage, string antwort1, string antwort2, string antwort3, string antwort4, int richtigeAntw)
+        {
+            currentList.Add(new Frage(url, frage, antwort1, antwort2, antwort3, antwort4, richtigeAntw));
+        }
+
 
         //Compares if the questionanswer equals the button-content.
         public bool BewerteAntwort(Frage aktuelleFrage, int antwort)
@@ -72,7 +77,7 @@ namespace quiz.Model
             viewModel.AktiveFrage = RandomFrage(viewModel);
         }
 
-        //Generate a random question of the Dictonary-pool
+        //Generate a random question of the list-pool
         private Frage RandomFrage(QuizViewModel viewModel)
         {
 

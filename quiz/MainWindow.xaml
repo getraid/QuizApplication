@@ -34,12 +34,12 @@
         <Button Command="{Binding CommandButton}" CommandParameter="4" Content="{Binding AktiveFrage.Name4}" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Width="113" Height="40" FontSize="10"/>
         <Image Source="{Binding AktiveFrage.BildUri}" Stretch="Uniform" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" MinWidth="128" MinHeight="128"/>
         <Label Content="{Binding AktiveFrage.FrageStellung}" Grid.Column="1" VerticalAlignment="Bottom" Grid.ColumnSpan="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="26" FontSize="14" FontFamily="Segoe UI Black" FontWeight="Bold"/>
-        <!--  <Menu Grid.ColumnSpan="5" VerticalAlignment="Top" >
+        <Menu Grid.ColumnSpan="5" VerticalAlignment="Top" >
             <MenuItem Header="_Datei" >
                 <MenuItem Header="_Öffne Fragen-Manager" Command="{Binding CommandNewQuestionWindow}"/>
                 <Separator />
                 <MenuItem Header="_Beenden"/>
             </MenuItem>
-        </Menu> -->
+        </Menu>
     </Grid>
 </Window>

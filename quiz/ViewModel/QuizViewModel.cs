@@ -8,6 +8,7 @@ using quiz.Command;
 using quiz.Model;
 using System.Windows.Forms;
 using System.Runtime.CompilerServices;
+using quiz.ViewModel.Command;
 
 namespace quiz.ViewModel
 {
@@ -45,6 +46,7 @@ namespace quiz.ViewModel
             //Initializes all new objects
             Init();
         }
+
         #endregion
 
         #region methods
