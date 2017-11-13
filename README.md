@@ -3,7 +3,7 @@ This C#.NET application is made to answer questions, that maybe your friends mad
 Made with the [MVVM-concept](https://de.wikipedia.org/wiki/Model_View_ViewModel) in mind.
 
 Please note: This project is fully documented in English (in Github), though the code itself contains German keywords.
-This will be changed in a later point in time to English only. 
+This will be changed at a later point in time to English only. 
 
 Currently developed by [@getraid](https://github.com/getraid).
 Maybe [@feeyz](https://github.com/Feeyz) will contribute something in the future here.
