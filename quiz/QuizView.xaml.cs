@@ -18,9 +18,9 @@ namespace quiz
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class QuizView : Window
     {
-        public MainWindow()
+        public QuizView()
         {
             DataContext = this;
             InitializeComponent();

@@ -72,7 +72,7 @@
     <Compile Include="Model\Frage.cs" />
     <Compile Include="ViewModel\QuestionCreatorViewModel.cs" />
     <Compile Include="ViewModel\QuizViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="QuizView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -80,8 +80,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="QuizView.xaml.cs">
+      <DependentUpon>QuizView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="QuestionCreator.xaml">
